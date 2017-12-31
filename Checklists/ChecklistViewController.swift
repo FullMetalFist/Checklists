@@ -9,6 +9,12 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController {
+    
+    let row0text = "Walk dog"
+    let row1text = "Brush teeth"
+    let row2text = "learn ios"
+    let row3text = "soccer"
+    let row4text = "ice cream"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +33,15 @@ class ChecklistViewController: UITableViewController {
         // kind of disappointed the text does not utilize 'switch' statements at this point
         switch indexPath.row % 5 {
         case 0:
-            label.text = "Walk the dog"
+            label.text = row0text
         case 1:
-            label.text = "Brush hair"
+            label.text = row1text
         case 2:
-            label.text = "learn iOS development"
+            label.text = row2text
         case 3:
-            label.text = "walk in park"
+            label.text = row3text
         case 4:
-            label.text = "eat delicious food"
+            label.text = row4text
         default:
             label.text = "not sure"
         }

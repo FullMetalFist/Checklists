@@ -9,49 +9,86 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController {
-
+    
+    var items: [ChecklistItem]
+    
+    let defltext = "not sure"
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        items = [ChecklistItem]()
+        
+        let row0item = ChecklistItem()
+        row0item.text = "Walk the dog"
+        row0item.checked = false
+        items.append(row0item)
+        
+        let row1item = ChecklistItem()
+        row1item.text = "Brush Teeth"
+        row1item.checked = false
+        items.append(row1item)
+        
+        let row2item = ChecklistItem()
+        row2item.text = "Learn iOS Development"
+        row2item.checked = false
+        items.append(row2item)
+        
+        let row3item = ChecklistItem()
+        row3item.text = "Eat delicious food"
+        row3item.checked = false
+        items.append(row3item)
+        
+        let row4item = ChecklistItem()
+        row4item.text = "walk in the park"
+        row4item.checked = false
+        items.append(row4item)
+        
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         
-        let label = cell.viewWithTag(1000) as! UILabel
-        
-        // kind of disappointed the text does not utilize 'switch' statements at this point
-        switch indexPath.row % 5 {
-        case 0:
-            label.text = "Walk the dog"
-        case 1:
-            label.text = "Brush hair"
-        case 2:
-            label.text = "learn iOS development"
-        case 3:
-            label.text = "walk in park"
-        case 4:
-            label.text = "eat delicious food"
-        default:
-            label.text = "not sure"
-        }
-        
+        let item = items[indexPath.row]
+
+        configureText(for: cell, with: item)
+        configureCheckmark(for: cell, with: item)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            if cell.accessoryType == .none {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
+            
+
+            let item = items[indexPath.row]
+            item.toggleChecked()
+            configureCheckmark(for: cell, with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+        
+        if item.checked {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+    }
+    
+    func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+        
+        let label = cell.viewWithTag(1000) as! UILabel
+        label.text = item.text
     }
 }
 

@@ -14,11 +14,13 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     let defltext = "not sure"
     
+    var checklist: Checklist!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
         loadChecklistItems()
+        title = checklist.name
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

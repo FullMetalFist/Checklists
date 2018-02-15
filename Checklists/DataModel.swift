@@ -17,6 +17,7 @@ class DataModel {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "ChecklistIndex")
+            UserDefaults.standard.synchronize()
         }
     }
     

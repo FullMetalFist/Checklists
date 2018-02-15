@@ -47,6 +47,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C26BCC12035EC4F00B087B9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C26BC61202FE60700B087B9 /* AllListsViewController.swift */,
+				7C6286FF1FF442EF00793DF4 /* ChecklistViewController.swift */,
+				7C568B2E2028BB430043CF73 /* ItemDetailViewController.swift */,
+				7C26BC652030E30C00B087B9 /* ListDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7C26BCC22035EC7300B087B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C6287041FF442EF00793DF4 /* Assets.xcassets */,
+				7C6287061FF442EF00793DF4 /* LaunchScreen.storyboard */,
+				7C6287011FF442EF00793DF4 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C26BCC32035EC8200B087B9 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				7C26BC632030DB3200B087B9 /* Checklist.swift */,
+				7C65BAFD2023B48600601042 /* ChecklistItem.swift */,
+				7C26BC872034990000B087B9 /* DataModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		7C6286F11FF442EF00793DF4 = {
 			isa = PBXGroup;
 			children = (
@@ -66,17 +97,10 @@
 		7C6286FC1FF442EF00793DF4 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				7C26BCC12035EC4F00B087B9 /* ViewControllers */,
 				7C6286FD1FF442EF00793DF4 /* AppDelegate.swift */,
-				7C6286FF1FF442EF00793DF4 /* ChecklistViewController.swift */,
-				7C65BAFD2023B48600601042 /* ChecklistItem.swift */,
-				7C568B2E2028BB430043CF73 /* ItemDetailViewController.swift */,
-				7C26BC61202FE60700B087B9 /* AllListsViewController.swift */,
-				7C26BC632030DB3200B087B9 /* Checklist.swift */,
-				7C26BC652030E30C00B087B9 /* ListDetailViewController.swift */,
-				7C26BC872034990000B087B9 /* DataModel.swift */,
-				7C6287011FF442EF00793DF4 /* Main.storyboard */,
-				7C6287041FF442EF00793DF4 /* Assets.xcassets */,
-				7C6287061FF442EF00793DF4 /* LaunchScreen.storyboard */,
+				7C26BCC22035EC7300B087B9 /* Resources */,
+				7C26BCC32035EC8200B087B9 /* DataModels */,
 				7C6287091FF442EF00793DF4 /* Info.plist */,
 			);
 			path = Checklists;

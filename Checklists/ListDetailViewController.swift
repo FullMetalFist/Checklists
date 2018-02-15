@@ -27,7 +27,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
         
         navigationItem.largeTitleDisplayMode = .never
         if let checklist = checklistToEdit {
-            title = "Edit CHecklist"
+            title = "Edit Checklist"
             textField.text = checklist.name
             doneBarButton.isEnabled = true
         }

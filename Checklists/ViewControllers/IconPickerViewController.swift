@@ -6,30 +6,38 @@
 //  Copyright © 2018 Michael Vilabrera. All rights reserved.
 //
 
+
+
 import UIKit
 
-class IconPickerViewController: UIViewController {
+protocol IconPickerViewControllerDelegate: class {
+    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String)
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class IconPickerViewController: UITableViewController {
+    
+    weak var delegate: IconPickerViewControllerDelegate?
+    
+    let icons = ["No Icon", "Appointments", "Birthdays", "Chores", "Drinks", "Folder", "Groceries", "Inbox", "Photos", "Trips"]
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return icons.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IconCell", for: indexPath)
+        
+        let iconName = icons[indexPath.row]
+        cell.textLabel!.text = iconName
+        cell.imageView!.image = UIImage(named: iconName)
+        
+        return cell
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let delegate = delegate {
+            let iconName = icons[indexPath.row]
+            delegate.iconPicker(self, didPick: iconName)
+        }
+    }
 }

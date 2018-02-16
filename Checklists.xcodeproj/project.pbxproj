@@ -18,6 +18,7 @@
 		7C6287051FF442EF00793DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C6287041FF442EF00793DF4 /* Assets.xcassets */; };
 		7C6287081FF442EF00793DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C6287061FF442EF00793DF4 /* LaunchScreen.storyboard */; };
 		7C65BAFE2023B48600601042 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C65BAFD2023B48600601042 /* ChecklistItem.swift */; };
+		7CE86AA22037602F00B615BB /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE86AA12037602F00B615BB /* IconPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7C6287071FF442EF00793DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C6287091FF442EF00793DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C65BAFD2023B48600601042 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		7CE86AA12037602F00B615BB /* IconPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				7C6286FF1FF442EF00793DF4 /* ChecklistViewController.swift */,
 				7C568B2E2028BB430043CF73 /* ItemDetailViewController.swift */,
 				7C26BC652030E30C00B087B9 /* ListDetailViewController.swift */,
+				7CE86AA12037602F00B615BB /* IconPickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				7C6287001FF442EF00793DF4 /* ChecklistViewController.swift in Sources */,
 				7C26BC662030E30C00B087B9 /* ListDetailViewController.swift in Sources */,
 				7C568B2F2028BB430043CF73 /* ItemDetailViewController.swift in Sources */,
+				7CE86AA22037602F00B615BB /* IconPickerViewController.swift in Sources */,
 				7C26BC642030DB3200B087B9 /* Checklist.swift in Sources */,
 				7C65BAFE2023B48600601042 /* ChecklistItem.swift in Sources */,
 				7C26BC882034990000B087B9 /* DataModel.swift in Sources */,

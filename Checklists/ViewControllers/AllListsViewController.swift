@@ -29,6 +29,11 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +46,15 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         let checklist = dataModel.lists[indexPath.row]
         cell.textLabel!.text = checklist.name
         cell.accessoryType = .detailDisclosureButton
+        let count = checklist.countUncheckedItems()
+        if checklist.items.count == 0 {
+            cell.detailTextLabel?.text = "No Items"
+        } else if count == 0 {
+            cell.detailTextLabel?.text = "Completed!"
+        } else {
+            cell.detailTextLabel?.text = "\(checklist.countUncheckedItems()) Remaining"
+        }
+        
         
         return cell
     }
@@ -75,7 +89,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
             return cell
         } else {
-            return UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+            return UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
         }
     }
     
